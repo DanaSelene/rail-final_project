@@ -55,24 +55,32 @@
   <tr>
     <th>Location</th>
     <th>Time (In 24 hours)</th>
-    <th>Time (In 12 hours)</th>
+    <th>
+      Time (In 12 hours) 
+      <%=
+      # Let's say that @post.validated? is 1:
+      check_box("post", "validated")
+      # => <input name="post[validated]" type="hidden" value="0" />
+      #    <input checked="checked" type="checkbox" id="post_validated" name="post[validated]" value="1" />
+      
+      %>
+    </th>
     <th>Difference In Time (In Hours)</th>
     <th>Date</th>
     <th>Mode</th>
     
   </tr>
-   <%=
-  time1 = Time.zone.now.in_time_zone("Melbourne")
-       time2 = Time.zone.now.in_time_zone("Melbourne")
-       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
-       %>
+  
   <tr>
     
     <td><%=Time.zone = "Melbourne" %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
     <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
     <td>
-      <%= 
+       <%= time1 = Time.zone.now.in_time_zone("Melbourne")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+        
        (time_difference_in_seconds/60/60).abs
     %> (Local)
     </td>
@@ -112,17 +120,17 @@
   </tr>
   
   
-  <%=
-  time1 = Time.zone.now.in_time_zone("America/New_York")
-       time2 = Time.zone.now.in_time_zone("Melbourne")
-       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
-       %>
+  
    <tr>
     
     <td><%=Time.zone = 'America/New_York' %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
     <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
-    <td><%= 
+    <td>
+    <%= time1 = Time.zone.now.in_time_zone("America/New_York")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+       
        (time_difference_in_seconds/60/60).abs
     %></td>
     <!--<td><%= Time.zone.today %>-->
@@ -160,17 +168,17 @@
     </td>
     
   </tr>
-  <%=
-  time1 = Time.zone.now.in_time_zone("Tokyo")
-       time2 = Time.zone.now.in_time_zone("Melbourne")
-       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
-       %>
+  
    <tr>
     
     <td><%=Time.zone = "Tokyo" %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S') %> </td>
     <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
-    <td><%= 
+    <td>
+    <%= time1 = Time.zone.now.in_time_zone("Tokyo")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+       
        (time_difference_in_seconds/60/60).abs
     %>
     </td>
@@ -338,4 +346,16 @@ Time.now.strftime("%l:%M%p on %A %e %Y")
 2.hours.ago.strftime("%l:%M%P on %A %e %Y")
 
 %></p>
+
+
+
+<p><%=
+# Let's say that @post.validated? is 1:
+check_box("post", "validated")
+# => <input name="post[validated]" type="hidden" value="0" />
+#    <input checked="checked" type="checkbox" id="post_validated" name="post[validated]" value="1" />
+
+%></p>
+
+
 </div>  
