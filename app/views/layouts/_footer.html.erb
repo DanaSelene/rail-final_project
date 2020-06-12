@@ -7,15 +7,29 @@
     <p>Student Name: Dawaname Dawaname</p>
     <p>Student Number: s3652553</p>
     <p>Email: -s3652553@student.rmit.edu.au-</p>
-    <p>attempt pass level</p>
+    <p>Attempt pass level</p>
     <p>Tutorial Group: Thursday 7:30pm Group </p>
   </small>
   
   <nav>
     <ul>
-      <li><a href="https://www.facebook.com/groups/CuteAnimalVideos/">Facebook</a></li>
-      <li><a href="https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
-      <li><a href="https://www.linkedin.com/learning/me?u=2104756">LinkedIn</a></li>
+      <li>Social links: </li>
+      <li>
+        <%= link_to image_tag("facebook.png", alt: "facebook icon image", style:"width: 40px; height: 40px"), 'https://www.facebook.com/groups/CuteAnimalVideos/' %>
+      </li>
+          
+      <li>
+        <%= link_to image_tag("twitter.png", alt: "twitter icon image", class: "icons", style:"width: 40px; height: 40px"), 'https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor' %>
+      </li>
+        
+      <li>
+        <%= link_to image_tag("linkedin.png", alt: "linkedin icon image", class: "icons", style:"width: 40px; height: 40px"), 'https://www.linkedin.com/learning/me?u=2104756' %>
+      </li>
+          
+         
+      <!--above 3 icons are from: Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
+          
     </ul>
+   
   </nav>
 </footer>

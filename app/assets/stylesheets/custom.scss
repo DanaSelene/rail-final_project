@@ -46,41 +46,28 @@ textarea {
 
 /* home table*/
 
-// table,
-// tr,
-// th,
-// td {
-//   border: 2px black solid;
-//   padding: 1px;
-//   text-align：left
-// }
-table {
+.center table {
   border-collapse: collapse;
+  border: 3px #A4ADAD solid;
   width: 100%;
 }
 
-th {
+.center th {
   // background-color: #4F9496;
   color: BLACK;
 }
 
-th,
-td {
+.center th,
+.center td {
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
+.center tr:nth-child(even) {
   background-color: #D0D3D3;
 }
 
-// tr:nth-child(odd) {
-//   // background-color: #f2f2f2;
-//   background-color: #A4ADAD;
-// }
-table {
-  border: 3px #A4ADAD solid;
-}
+
 
 /* typography */
 
@@ -144,16 +131,26 @@ footer {
   color: #D0D3D3;
 }
 
-footer a {
+footer a,
+footer a:visited {
   color: #D0D3D3;
+  decoration: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:active {
   color: white;
 }
 
 footer small {
   float: left;
+}
+
+footer table,
+footer td,
+fotter tr {
+  float: right;
+  list-style: none;
 }
 
 footer ul {
