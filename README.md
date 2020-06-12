@@ -1,10 +1,11 @@
 # Rapid Application Final Project
 # Student: Dawaname Dawaname
+# Student Number: s3652553
+# I am going for Credit Level
 # I am followed the ruby on rails tutorial book to make headers and footers.
 # I have downloaded icons/images from this website: Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
-# I have used this website to find the time that the user opened the website, both in foreigner countries and local time:  https://time.is/zh/widgets/Melbourne
-# Similarly, I have used this website to find the time differences: https://time.is/zh/compare/0800_12_June_2020_in_Melbourne/New_York_City_Farm_Colony
+# I have followed lots of method and pathways on the internet, but there are too much things I have opened...So I can't find the root for each one that I have used and worked.
 
 
 
