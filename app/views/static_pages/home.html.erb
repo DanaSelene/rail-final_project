@@ -25,25 +25,25 @@
 <table class = "iconList">
   <tr>
     <td>
-      <%= link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px") %>
+      <%= link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px") %>
     </td>
     <td>Business Time</td>
   </tr>
   <tr>
     <td>
-      <%= link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px") %>
+      <%= link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px") %>
     </td>
     <td>Business overtime</td>
   </tr>
   <tr>
     <td>
-      <%= link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px") %>
+      <%= link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px") %>
     </td>
     <td>Person Time</td>
   </tr>
   <tr>
     <td>
-      <%= link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px") %>
+      <%= link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px") %>
     </td>
     <td>Sleeping Time</td>
   </tr>
@@ -103,16 +103,16 @@
       case (Time.current.hour)
       when 9..17
         "Business Time"
-        link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px")
       when 18..19
         "Buiness Overtime"
-        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px")
       when 8, 20..22
         "Person Time"
-        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px")
       when 23..24,0..7
         "Sleeping Time"
-        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px")
       end
       %>
     </td>
@@ -153,16 +153,16 @@
       case (Time.current.hour)
       when 9..17
         "Business Time"
-         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px")
+         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px")
       when 18..19
         "Buiness Overtime"
-        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px")
       when 8, 20..22
         "Person Time"
-        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px")
       when 23..24,0..7
         "Sleeping Time"
-        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px")
       end
       %>
     </td>
@@ -203,17 +203,17 @@
       case (Time.current.hour)
       when 9..17
         "Business Time"
-         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px")
+         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px")
       
       when 18..19
         "Buiness Overtime"
-        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px")
       when 8, 20..22
         "Person Time"
-        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px")
       when 23..24,0..7
         "Sleeping Time"
-        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px")
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px")
       end
       %>
     </td>
@@ -356,6 +356,10 @@ check_box("post", "validated")
 #    <input checked="checked" type="checkbox" id="post_validated" name="post[validated]" value="1" />
 
 %></p>
+
+<p>
+  <%= check_box(:Monday,{:id => "Monday",:value => "Monday"}) %>
+</p>
 
 
 </div>  
