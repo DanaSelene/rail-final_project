@@ -15,7 +15,7 @@
     <p>Student Name: Dawaname Dawaname</p>
     <p>Student Number: s3652553</p>
     <p>Email: -s3652553@student.rmit.edu.au-</p>
-    <p>attempt pass level</p>
+    <p>Attempt Credit Level</p>
     <p>Tutorial Group: Thursday 7:30pm Group </p>
   </div>
   
@@ -54,7 +54,8 @@
 <table class=status>
   <tr>
     <th>Location</th>
-    <th>Time</th>
+    <th>Time (In 24 hours)</th>
+    <th>Time (In 12 hours)</th>
     <th>Difference In Time (In Hours)</th>
     <th>Date</th>
     <th>Mode</th>
@@ -69,6 +70,7 @@
     
     <td><%=Time.zone = "Melbourne" %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
+    <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
     <td>
       <%= 
        (time_difference_in_seconds/60/60).abs
@@ -119,6 +121,7 @@
     
     <td><%=Time.zone = 'America/New_York' %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
+    <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
     <td><%= 
        (time_difference_in_seconds/60/60).abs
     %></td>
@@ -166,6 +169,7 @@
     
     <td><%=Time.zone = "Tokyo" %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S') %> </td>
+    <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
     <td><%= 
        (time_difference_in_seconds/60/60).abs
     %>
@@ -317,4 +321,21 @@ end
   end %>
 </p>
 
+<p><%=
+DateTime.now.strftime("%l:%M%P on %A %e %Y")
+%></p>
+
+# <p><%=Time.now.strftime("%l:%M%P on %A %e %Y")%></p>
+<p><%=
+Time.now.strftime("%l:%M%P ")
+%></p>
+
+<p><%=
+Time.now.strftime("%l:%M%p on %A %e %Y")
+%></p>
+
+<p><%=
+2.hours.ago.strftime("%l:%M%P on %A %e %Y")
+
+%></p>
 </div>  
