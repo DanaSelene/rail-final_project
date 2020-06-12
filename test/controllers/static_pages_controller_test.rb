@@ -5,16 +5,32 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     @base_title = "Clock+"
   end
   
-  test "should get home" do
-    get static_pages_home_url
-    assert_response :success
-    assert_select "title", "Home | Clock+"
-  end
+  # test "should get home" do
+  #   get static_pages_home_url
+  #   assert_response :success
+  #   assert_select "title", "Home | Clock+"
+  # end
 
-  test "should get contact_us" do
-    get static_pages_contact_us_url
+  # test "should get contact_us" do
+  #   get static_pages_contact_us_url
+  #   assert_response :success
+  #   assert_select "title", "Contact Us | Clock+"
+  # end
+  
+  
+  
+  test "should get home" do
+    get root_path
     assert_response :success
-    assert_select "title", "Contact Us | Clock+"
+    assert_select "title", "Clock+"
   end
+  
+  test "should get contact_us" do
+    get contact_us_path
+    assert_response :success
+    assert_select "title", "contact_us | Clock+"
+  end
+  
+ 
 
 end
