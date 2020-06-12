@@ -1,0 +1,228 @@
+
+<div class="center jumbotron">
+  <h1>Welcome to the Clock+</h1>
+  
+  <h2>
+  This is the home page for the  Clock+.
+  </h2>
+  
+
+  
+  
+  <div class = "author">
+    <h2>About Author</h2>
+    <p>Clock+</p>
+    <p>Student Name: Dawaname Dawaname</p>
+    <p>Student Number: s3652553</p>
+    <p>Email: -s3652553@student.rmit.edu.au-</p>
+    <p>Attempt Credit Level</p>
+    <p>Tutorial Group: Thursday 7:30pm Group </p>
+  </div>
+  
+
+<h2>Time </h2>
+<div class = pass>
+<table class = "iconList">
+  <tr>
+    <td>
+      <%= link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px") %>
+    </td>
+    <td>Business Time</td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px") %>
+    </td>
+    <td>Business overtime</td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px") %>
+    </td>
+    <td>Person Time</td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px") %>
+    </td>
+    <td>Sleeping Time</td>
+  </tr>
+</table>
+
+</br>
+<br/>
+<table class=status>
+  <tr>
+    <th>Location</th>
+    <th>Time (In 24 hours)</th>
+    <th>
+      Time (In 12 hours) 
+      <%=
+      # Let's say that @post.validated? is 1:
+      check_box("post", "validated")
+      # => <input name="post[validated]" type="hidden" value="0" />
+      #    <input checked="checked" type="checkbox" id="post_validated" name="post[validated]" value="1" />
+      
+      %>
+    </th>
+    <th>Difference In Time (In Hours)</th>
+    <th>Date</th>
+    <th>Mode</th>
+    
+  </tr>
+  
+  <tr>
+    
+    <td><%=Time.zone = "Melbourne" %></td>
+    <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
+    <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
+    <td>
+       <%= time1 = Time.zone.now.in_time_zone("Melbourne")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+        
+       (time_difference_in_seconds/60/60).abs
+    %> (Local)
+    </td>
+    <!--<td><%= Time.zone.today %></td>-->
+    <td> 
+    
+    <%=  if Time.zone.now.day > Time.now.day
+        # 'Tomorrow'
+        'Today'
+      elsif Time.zone.now.day < Time.now.day
+        # 'Yesterday'
+        'Tomorrow'
+      else
+        # 'Today'
+        'Yesterday'
+      end %>
+    </td>
+    <td><%=
+
+      case (Time.current.hour)
+      when 9..17
+        "Business Time"
+        link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 18..19
+        "Buiness Overtime"
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 8, 20..22
+        "Person Time"
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 23..24,0..7
+        "Sleeping Time"
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px")
+      end
+      %>
+    </td>
+    
+  </tr>
+  
+  
+  
+   <tr>
+    
+    <td><%=Time.zone = 'America/New_York' %></td>
+    <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
+    <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
+    <td>
+    <%= time1 = Time.zone.now.in_time_zone("America/New_York")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+       
+       (time_difference_in_seconds/60/60).abs
+    %></td>
+    <!--<td><%= Time.zone.today %>-->
+    <!--</td>-->
+    <td>
+      <%=  if Time.zone.now.day > Time.now.day
+        # 'Tomorrow'
+        'Today'
+      elsif Time.zone.now.day < Time.now.day
+        # 'Yesterday'
+        'Tomorrow'
+      else
+        # 'Today'
+        'Yesterday'
+      end %>
+    </td>
+    <td>
+      <%=
+
+      case (Time.current.hour)
+      when 9..17
+        "Business Time"
+         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 18..19
+        "Buiness Overtime"
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 8, 20..22
+        "Person Time"
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 23..24,0..7
+        "Sleeping Time"
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px")
+      end
+      %>
+    </td>
+    
+  </tr>
+  
+   <tr>
+    
+    <td><%=Time.zone = "Tokyo" %></td>
+    <td><%= Time.zone.now.strftime('%H:%M:%S') %> </td>
+    <td> <%= Time.zone.now.strftime("%l:%M%P ") %></td>
+    <td>
+    <%= time1 = Time.zone.now.in_time_zone("Tokyo")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+       
+       (time_difference_in_seconds/60/60).abs
+    %>
+    </td>
+    <!--<td><%= Time.zone.today %></td>-->
+    <td>
+      <%=  if Time.zone.now.day > Time.now.day
+        # 'Tomorrow'
+        'Today'
+      elsif Time.zone.now.day < Time.now.day
+        # 'Yesterday'
+        'Tomorrow'
+      else
+        # 'Today'
+        'Yesterday'
+      end %>
+      
+    </td>
+    
+    <td>
+      <%=
+
+      case (Time.current.hour)
+      when 9..17
+        "Business Time"
+         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 25px; height: 25px")
+      
+      when 18..19
+        "Buiness Overtime"
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 8, 20..22
+        "Person Time"
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 25px; height: 25px")
+      when 23..24,0..7
+        "Sleeping Time"
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 25px; height: 25px")
+      end
+      %>
+    </td>
+    
+  </tr>
+  
+</table>
+
+</div>
+
+
+</div>  
