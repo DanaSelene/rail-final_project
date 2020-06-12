@@ -60,15 +60,34 @@
     <th>Mode</th>
     
   </tr>
-  
+   <%=
+  time1 = Time.zone.now.in_time_zone("Melbourne")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+       %>
   <tr>
     
     <td><%=Time.zone = "Melbourne" %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
     <td>
-      Local
+      <%= 
+       (time_difference_in_seconds/60/60).abs
+    %> (Local)
     </td>
-    <td><%= Time.zone.today %></td>
+    <!--<td><%= Time.zone.today %></td>-->
+    <td> 
+    
+    <%=  if Time.zone.now.day > Time.now.day
+        # 'Tomorrow'
+        'Today'
+      elsif Time.zone.now.day < Time.now.day
+        # 'Yesterday'
+        'Tomorrow'
+      else
+        # 'Today'
+        'Yesterday'
+      end %>
+    </td>
     <td><%=
 
       case (Time.current.hour)
@@ -103,7 +122,19 @@
     <td><%= 
        (time_difference_in_seconds/60/60).abs
     %></td>
-    <td><%= Time.zone.today %>
+    <!--<td><%= Time.zone.today %>-->
+    <!--</td>-->
+    <td>
+      <%=  if Time.zone.now.day > Time.now.day
+        # 'Tomorrow'
+        'Today'
+      elsif Time.zone.now.day < Time.now.day
+        # 'Yesterday'
+        'Tomorrow'
+      else
+        # 'Today'
+        'Yesterday'
+      end %>
     </td>
     <td>
       <%=
@@ -132,11 +163,6 @@
        time_difference_in_seconds = time2.utc_offset - time1.utc_offset
        %>
    <tr>
-    <!--<td>Tokyo </td>-->
-    <!--<td>time: <span id="Tokyo_z444"></span> </td>-->
-    <!--<td><span>difference in time: -1 hour</span> </td>-->
-    <!--<td>Mode: Business Time</td>-->
-    
     
     <td><%=Time.zone = "Tokyo" %></td>
     <td><%= Time.zone.now.strftime('%H:%M:%S') %> </td>
@@ -144,7 +170,20 @@
        (time_difference_in_seconds/60/60).abs
     %>
     </td>
-    <td><%= Time.zone.today %></td>
+    <!--<td><%= Time.zone.today %></td>-->
+    <td>
+      <%=  if Time.zone.now.day > Time.now.day
+        # 'Tomorrow'
+        'Today'
+      elsif Time.zone.now.day < Time.now.day
+        # 'Yesterday'
+        'Tomorrow'
+      else
+        # 'Today'
+        'Yesterday'
+      end %>
+      
+    </td>
     
     <td>
       <%=
