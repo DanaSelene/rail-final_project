@@ -5,10 +5,13 @@
 
 body {
   padding-top: 60px;
+  background-color: rgb(31, 94, 96);
+
 }
 
 section {
   overflow: auto;
+
 }
 
 textarea {
@@ -17,12 +20,67 @@ textarea {
 
 .center {
   text-align: center;
+  background-color: #7A9797;
+
 }
 
 .center h1 {
   margin-bottom: 10px;
 }
 
+// not working:
+.center .author {
+  align: center;
+  text-align: left;
+}
+
+.center h2 {
+  color: #D0D3D3;
+}
+
+
+.author {
+  align: center; // margin: 15em;
+}
+
+
+/* home table*/
+
+// table,
+// tr,
+// th,
+// td {
+//   border: 2px black solid;
+//   padding: 1px;
+//   text-align：left
+// }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  // background-color: #4F9496;
+  color: BLACK;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D0D3D3;
+}
+
+// tr:nth-child(odd) {
+//   // background-color: #f2f2f2;
+//   background-color: #A4ADAD;
+// }
+table {
+  border: 3px #A4ADAD solid;
+}
 
 /* typography */
 
@@ -83,15 +141,15 @@ footer {
   margin: 45px;
   padding: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
+  color: #D0D3D3;
 }
 
 footer a {
-  color: #555;
+  color: #D0D3D3;
 }
 
 footer a:hover {
-  color: #222;
+  color: white;
 }
 
 footer small {

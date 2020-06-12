@@ -15,4 +15,9 @@ module HelloApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   end
+  
+  class Application < Rails::Application
+    config.time_zone = 'Eastern Time (US & Canada)'
+    Time.now.in_time_zone('Australia/Melbourne').utc_offset
+  end
 end
