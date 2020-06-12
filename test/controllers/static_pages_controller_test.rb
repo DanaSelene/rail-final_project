@@ -25,12 +25,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Clock+"
   end
   
-  test "should get contact_us" do
-    get contact_us_path
-    assert_response :success
-    assert_select "title", "contact_us | Clock+"
-  end
-  
  
 
 end

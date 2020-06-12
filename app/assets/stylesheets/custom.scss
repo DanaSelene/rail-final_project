@@ -5,8 +5,8 @@
 
 body {
   padding-top: 60px;
-  background-color: rgb(31, 94, 96);
-
+  background-color: #2B3B50;
+  color: #D0D3D3;
 }
 
 section {
@@ -20,7 +20,7 @@ textarea {
 
 .center {
   text-align: center;
-  background-color: #7A9797;
+  background-color: #3A506B;
 
 }
 
@@ -54,7 +54,7 @@ textarea {
 
 .center th {
   // background-color: #4F9496;
-  color: BLACK;
+  color: #D0D3D3;
 }
 
 .center th,
@@ -65,8 +65,20 @@ textarea {
 
 .center tr:nth-child(even) {
   background-color: #D0D3D3;
+  color: black;
 }
 
+.center tr:nth-child(odd) {
+  color: #D0D3D3;
+  background-color: #3A506B;
+}
+
+.center .iconList {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 
 /* typography */
@@ -93,7 +105,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #D0D3D3;
 }
 
 p {
@@ -108,7 +120,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #D0D3D3;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -116,8 +128,23 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #D0D3D3;
   text-decoration: none;
+}
+
+nav {
+  color: #D0D3D3;
+}
+
+header li,
+header li:visited {
+  color: #D0D3D3;
+  decoration: none;
+}
+
+header li:hover,
+header li:active {
+  color: white;
 }
 
 

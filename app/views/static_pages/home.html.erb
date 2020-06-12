@@ -10,7 +10,7 @@
   
   
   <div class = "author">
-    <h2> About Author</h2>
+    <h2>About Author</h2>
     <p>Clock+</p>
     <p>Student Name: Dawaname Dawaname</p>
     <p>Student Number: s3652553</p>
@@ -19,53 +19,263 @@
     <p>Tutorial Group: Thursday 7:30pm Group </p>
   </div>
   
-  
- 
-  <h2>multiple time: </h2>
 
+<h2>Time </h2>
+<div class = pass>
+<table class = "iconList">
+  <tr>
+    <td>
+      <%= link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px") %>
+    </td>
+    <td>Business Time</td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px") %>
+    </td>
+    <td>Business overtime</td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px") %>
+    </td>
+    <td>Person Time</td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px") %>
+    </td>
+    <td>Sleeping Time</td>
+  </tr>
+</table>
 
-<table>
-  
+</br>
+<br/>
+<table class=status>
+  <tr>
+    <th>Location</th>
+    <th>Time</th>
+    <th>Difference In Time (In Hours)</th>
+    <th>Date</th>
+    <th>Mode</th>
+    
+  </tr>
   
   <tr>
-    <th>Melbourne</th>
-    <td>time: <span id="Melbourne_z609"></span></td>
-    <td><span>Local time </span></td>
-    <td>Mode: Business Time</td>
+    
+    <td><%=Time.zone = "Melbourne" %></td>
+    <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
+    <td>
+      Local
+    </td>
+    <td><%= Time.zone.today %></td>
+    <td><%=
+
+      case (Time.current.hour)
+      when 9..17
+        "Business Time"
+        link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 18..19
+        "Buiness Overtime"
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 8, 20..22
+        "Person Time"
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 23..24,0..7
+        "Sleeping Time"
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px")
+      end
+      %>
+    </td>
+    
   </tr>
   
-   <tr>
-    <th>New York</th>
-    <td> time: <span id="New_York_z161"></span></td>
-    <td><span>difference in time: -14 hour</span> </td>
-    <td>Mode: Business Time</td>
-  </tr>
   
+  <%=
+  time1 = Time.zone.now.in_time_zone("America/New_York")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+       %>
    <tr>
-    <th>Tokyo </th>
-    <td>time: <span id="Tokyo_z444"></span> </td>
-    <td><span>difference in time: -1 hour</span> </td>
-    <td>Mode: Business Time</td>
+    
+    <td><%=Time.zone = 'America/New_York' %></td>
+    <td><%= Time.zone.now.strftime('%H:%M:%S')%></td>
+    <td><%= 
+       (time_difference_in_seconds/60/60).abs
+    %></td>
+    <td><%= Time.zone.today %>
+    </td>
+    <td>
+      <%=
+
+      case (Time.current.hour)
+      when 9..17
+        "Business Time"
+         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 18..19
+        "Buiness Overtime"
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 8, 20..22
+        "Person Time"
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 23..24,0..7
+        "Sleeping Time"
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px")
+      end
+      %>
+    </td>
+    
+  </tr>
+  <%=
+  time1 = Time.zone.now.in_time_zone("Tokyo")
+       time2 = Time.zone.now.in_time_zone("Melbourne")
+       time_difference_in_seconds = time2.utc_offset - time1.utc_offset
+       %>
+   <tr>
+    <!--<td>Tokyo </td>-->
+    <!--<td>time: <span id="Tokyo_z444"></span> </td>-->
+    <!--<td><span>difference in time: -1 hour</span> </td>-->
+    <!--<td>Mode: Business Time</td>-->
+    
+    
+    <td><%=Time.zone = "Tokyo" %></td>
+    <td><%= Time.zone.now.strftime('%H:%M:%S') %> </td>
+    <td><%= 
+       (time_difference_in_seconds/60/60).abs
+    %>
+    </td>
+    <td><%= Time.zone.today %></td>
+    
+    <td>
+      <%=
+
+      case (Time.current.hour)
+      when 9..17
+        "Business Time"
+         link_to image_tag("green.png", alt: "green icon image", class: "icons", style:"width: 15px; height: 15px")
+      
+      when 18..19
+        "Buiness Overtime"
+        link_to image_tag("yellow.png", alt: "yellow icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 8, 20..22
+        "Person Time"
+        link_to image_tag("red.png", alt: "red icon image", class: "icons", style:"width: 15px; height: 15px")
+      when 23..24,0..7
+        "Sleeping Time"
+        link_to image_tag("blue.png", alt: "blue icon image", class: "icons", style:"width: 15px; height: 15px")
+      end
+      %>
+    </td>
+    
   </tr>
   
 </table>
 
-
-<script src="//widget.time.is/zh.js"></script>
-<script>
-time_is_widget.init({
-// 	UTC_za00 : {},
-  Melbourne_z609:{},
-	New_York_z161 : {
-		// template: "SUN",
-		// sun_format: "srhour:srminute",
-		// coords: "40.71427,-74.00597"
-		},
-	Tokyo_z444 : {
-		// coords: "59.33258,18.06490"
-		}
-	});
-</script>
-
-
 </div>
+
+<!--Time.zone -->
+<p><%= Time.now.in_time_zone('America/New_York') %>New York, America</p>
+
+<p><%= Time.now.in_time_zone('Australia/Melbourne') %>Melbourne, Australia</p>
+
+<p><%=Time.zone = "Berlin" %>
+
+<%= Time.zone.now.strftime('%H:%M:%S')%>
+
+</p>
+
+<p><%= Time.current.between?('09:00 UTC-05:00', '19:00 UTC-05:00') %></p>
+
+
+<!--testing-->
+
+
+
+<p><%=Time.zone = "Berlin" %>
+
+<%= Time.zone.now.strftime('%H')%>
+
+</p>
+<p><%= Time.zone = "America/New_York"%>
+</p>
+
+<p>
+<%= t = Time.zone.now.strftime('%H')%>
+<%= t%>
+
+</p>
+
+
+
+
+<p>
+  
+  <%=
+
+      case (Time.current.hour)
+      when 9..17
+        "Business Time"
+      when 18..19
+        "Buiness Overtime"
+      when 8, 20..22
+        "Person Time"
+      when 23..24,0..7
+        "Sleeping Time"
+      end
+      %>
+  
+</p>
+<!--testing-->
+
+<p><%=
+# (9..16).include?(Time.current.hour)
+
+case (Time.current.hour)
+when 9..17
+  "Business Time"
+when 18..19
+  "Buiness Overtime"
+when 8, 20..22
+  "Person Time"
+when 23..24,0..7
+  "Sleeping Time"
+end
+%></p>
+
+<p  style="color: Black;" > <%= if Time.now.hour >= 9 && Time.now.hour < 18
+    'Business time'
+    elsif Time.now.hour >= 18 && Time.now.hour < 20
+    'Business overtime'
+    elsif (Time.now.hour >= 8 && Time.now.hour < 9) || (Time.now.hour >= 20 && Time.now.hour < 23)
+    'Personal time'
+    else
+    'Sleeping'
+    end %></p>
+    
+<p>
+  <p  style="color: Black;" >
+<%=  if Time.zone.now.hour > Time.now.hour && Time.zone.now.day == Time.now.day || Time.zone.now.day > Time.now.day
+    add = Time.zone.now.hour - Time.now.hour
+    "+" + add.to_s + "h"
+  elsif Time.zone.now.hour < Time.now.hour && Time.zone.now.day == Time.now.day || Time.zone.now.day < Time.now.day
+    sub = Time.now.hour - Time.zone.now.hour
+    sub.to_s + "h"
+  else
+    ''
+  end %>
+</p>
+</p>
+
+
+
+<p class="text-right" style="color: Black;" >
+<%=  if Time.zone.now.day > Time.now.day
+    'Tomorrow'
+  elsif Time.zone.now.day < Time.now.day
+    'Yesterday'
+  else
+    'Today'
+  end %>
+</p>
+
+</div>  
